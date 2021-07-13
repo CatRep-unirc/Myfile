@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright 2019 Tampere University. Redistribution and use in source 
+	and binary forms, with or without modification, are permitted provided that 
+	the following conditions are met: 1. Redistributions of source code must 
+	retain the above copyright notice, this list of conditions and the following 
+	disclaimer. 2. Redistributions in binary form must reproduce the above copyright 
+	notice, this list of conditions and the following disclaimer in the documentation 
+	and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED 
+	BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED 
+	WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY 
+	AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE 
+	COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+	SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED 
+	TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+	OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+	WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+	POSSIBILITY OF SUCH DAMAGE. For more information about this object, please 
+	contact Bilhanan.Silverajan@tuni.fi -->
+
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd">
+	<Object ObjectType="MODefinition">
+		<Name> Inferenza </Name>
+		<Description1>
+	  <![CDATA[
+	 inferenza sui dati in output dal docker
+	  ]]>
+	</Description1>
+		<ObjectID>10300</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:10300</ObjectURN>
+		<LWM2MVersion>1.0</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Multiple</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="0">
+				<Name>Start inference</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>
+		  <![CDATA[
+		 Start the inference system
+		  ]]>
+		</Description>
+			</Item>
+
+			<Item ID="1">
+				<Name> Inference result </Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Optional</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>
+		  <![CDATA[
+		  Last inference result
+		  ]]>
+		</Description>
+			</Item>
+
+			<Item ID="2">
+				<Name> People detenction</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Optional</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>
+		  <![CDATA[
+		  Is there people in video ?
+		  ]]>
+		</Description>
+			</Item>
+
+			<Item ID="3">
+				<Name> Find an object </Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Optional</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>
+		  <![CDATA[
+		  Is there a particular object in the video?
+		  ]]>
+		</Description>
+			</Item>
+
+			<Item ID="4">
+				<Name> Date time </Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Optional</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>
+		  <![CDATA[
+		 	when was the last inference?
+		  ]]>
+		</Description>
+			</Item>
+			<Item ID="5">
+				<Name> Accuracy </Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Optional</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>
+		  <![CDATA[
+		 	 last inference's accuracy
+		  ]]>
+		</Description>
+			</Item>
+
+			<Item ID="6">
+				<Name> Object position </Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Optional</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description>
+		  <![CDATA[
+		 	 last inference's accuracy
+		  ]]>
+		</Description>
+			</Item>
+
+			<!-- <Item ID="4000"> <Name>ObjectInstanceHandle</Name> <Operations>R</Operations> 
+				<MultipleInstances>Single</MultipleInstances> <Mandatory>Optional</Mandatory> 
+				<Type>Objlnk</Type> <RangeEnumeration></RangeEnumeration> <Units></Units> 
+				<Description> <![CDATA[The object link is used to refer an Instance of a 
+				given Object. An Object link value is composed of two concatenated 16-bit 
+				unsigned integers following the Network Byte Order convention. The Most Significant 
+				Halfword is an Object ID, the Least Significant Halfword is an Object Instance 
+				ID. An Object Link referencing no Object Instance will contain the concatenation 
+				of 2 MAX-ID values.]]> </Description> </Item> -->
+			<!-- <Item ID="2"> <Name> Object to find </Name> <Operations>W</Operations> 
+				<MultipleInstances>Single</MultipleInstances> <Mandatory>Optional</Mandatory> 
+				<Type>String</Type> <RangeEnumeration></RangeEnumeration> <Units></Units> 
+				<Description> <![CDATA[ Specify a particular object to find ]]> </Description> 
+				</Item> <Item ID="3"> <Name> Object detection </Name> <Operations>R</Operations> 
+				<MultipleInstances>Single</MultipleInstances> <Mandatory>Optional</Mandatory> 
+				<Type>String</Type> <RangeEnumeration></RangeEnumeration> <Units></Units> 
+				<Description> <![CDATA[ Start the search ]]> </Description> </Item> <Item 
+				ID="4"> <Name>Date and time</Name> <Operations>R</Operations> <MultipleInstances>Single</MultipleInstances> 
+				<Mandatory>Optional</Mandatory> <Type>String</Type> <RangeEnumeration></RangeEnumeration> 
+				<Units></Units> <Description> <![CDATA[ ]]> </Description> </Item> <Item 
+				ID="4"> <Name>Accuracy</Name> <Operations>R</Operations> <MultipleInstances>Single</MultipleInstances> 
+				<Mandatory>Optional</Mandatory> <Type>String</Type> <RangeEnumeration></RangeEnumeration> 
+				<Units></Units> <Description> <![CDATA[ The precision ]]> </Description> 
+				</Item> <Item ID="5"> <Name> Position </Name> <Operations>R</Operations> 
+				<MultipleInstances>Single</MultipleInstances> <Mandatory>Optional</Mandatory> 
+				<Type>String</Type> <RangeEnumeration></RangeEnumeration> <Units></Units> 
+				<Description> <![CDATA[ Coordinate dell'ultimo object di tipo person rilevato 
+				]]> </Description> </Item> -->
+		</Resources>
+		<Description2><![CDATA[]]></Description2>
+	</Object>
+</LWM2M>
