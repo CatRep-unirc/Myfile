@@ -1,0 +1,44 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+mqtt: 
+  broker: localhost 
+  port: 1883
+    
+camera:
+  platform: mqtt
+  name: camera_mqtt
+  topic: /home/simone/Scrivania/img_web/img
+
+image_processing:
+  - platform: deepstack_object
+    ip_address: localhost
+    port: 83
+    # custom_model: mask
+    # confidence: 80
+    save_file_folder: ./config/snapshots/
+    save_file_format: png
+    save_timestamped_file: True
+    always_save_latest_file: True
+    scale: 0.75
+    # roi_x_min: 0.35
+    roi_x_max: 0.8
+    #roi_y_min: 0.4
+    roi_y_max: 0.8
+    targets:
+      - target: person
+    source:
+      - entity_id: camera.camera_mqtt
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+
+

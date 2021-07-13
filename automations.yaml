@@ -1,0 +1,12 @@
+- id: '1625754908624'
+  alias: Person Detection
+  description: 'effettua inferenza per verificare la presenza o meno di persone '
+  trigger:
+  - platform: time_pattern
+    seconds: '5'
+  condition: []
+  action:
+  - service: image_processing.scan
+    target:
+      entity_id: image_processing.deepstack_object_camera_mqtt
+  mode: restart

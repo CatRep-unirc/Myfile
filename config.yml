@@ -1,0 +1,24 @@
+mqtt:
+  broker: localhost 
+  port: 1883
+  QOS: 1
+
+camera:
+  video_source: 0 
+  fps: 0.5 
+  mqtt_topic: /home/simone/Scrivania/img_web/img
+
+processing:
+  subscribe_topic: /home/simone/Scrivania/img_web/img
+  publish_topic: homie/mac_webcam/capture/rotated
+
+save-captures:
+  mqtt_topic: /home/simone/Scrivania/img_web/img
+  captures_directory: /home/simone/Scrivania/img_web_save/img
+  
+  
+  
+  
+  
+  
+  
